@@ -1,0 +1,32 @@
+<nav class="desktop-nav" fxHide.lt-md="true">
+    <ul fxLayout="row wrap" fxLayoutAlign="space-between">
+        <li fxFlex fxFill routerLink="/games/top-games" routerLinkActive="active">Top Games</li>
+        <li fxFlex fxFill routerLink="/games/new-games" routerLinkActive="active">New Games</li>
+        <li fxFlex fxFill routerLink="/games/slots" routerLinkActive="active">Slots</li>
+        <li fxFlex fxFill routerLink="/games/jackpots" routerLinkActive="active">Jackpots</li>
+        <li fxFlex fxFill routerLink="/games/live" routerLinkActive="active">Live</li>
+        <li fxFlex fxFill routerLink="/games/blackjack" routerLinkActive="active">Blackjack</li>
+        <li fxFlex fxFill routerLink="/games/roulette" routerLinkActive="active">Roulette</li>
+        <li fxFlex fxFill routerLink="/games/table" routerLinkActive="active">Table</li>
+        <li fxFlex fxFill routerLink="/games/poker" routerLinkActive="active">Poker</li>
+        <li fxFlex fxFill routerLink="/games/others" routerLinkActive="active">Others</li>
+    </ul>
+</nav>
+
+<nav class="mobile-nav" fxHide="true" fxShow.lt-md="true">
+    <button class="menu-btn no-btn" (click)="isOpen = !isOpen">
+        <i class="material-icons">menu</i>
+    </button>
+    <ul [class.open]="isOpen" fxLayout="column wrap" fxLayoutAlign="center">
+        <li routerLink="/games/top-games" routerLinkActive="active" (click)="isOpen = !isOpen">Top Games</li>
+        <li routerLink="/games/new-games" routerLinkActive="active" (click)="isOpen = !isOpen">New Games</li>
+        <li routerLink="/games/slots" routerLinkActive="active" (click)="isOpen = !isOpen">Slots</li>
+        <li routerLink="/games/jackpots" routerLinkActive="active" (click)="isOpen = !isOpen">Jackpots</li>
+        <li routerLink="/games/live" routerLinkActive="active" (click)="isOpen = !isOpen">Live</li>
+        <li routerLink="/games/blackjack" routerLinkActive="active" (click)="isOpen = !isOpen">Blackjack</li>
+        <li routerLink="/games/roulette" routerLinkActive="active" (click)="isOpen = !isOpen">Roulette</li>
+        <li routerLink="/games/table" routerLinkActive="active" (click)="isOpen = !isOpen">Table</li>
+        <li routerLink="/games/poker" routerLinkActive="active" (click)="isOpen = !isOpen">Poker</li>
+        <li routerLink="/games/others" routerLinkActive="active" (click)="isOpen = !isOpen">Others</li>
+    </ul>
+</nav>

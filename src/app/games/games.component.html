@@ -1,0 +1,26 @@
+<div class="game-grid" fxLayout="row wrap" fxLayout.lt-sm="column wrap" fxLayoutAlign="space-between"
+    fxLayoutAlign.lt-sm="center">
+    <ng-container *ngIf="(gamesJackpots$ | async)?.length > 0; else noGames;">
+        <div class="game" fxFlex="20" fxFlex.lt-lg="33" fxFlex.lt-md="50" *ngFor="let game of (gamesJackpots$ | async)">
+            <div class="game-content">
+                <img class="ribbon" *ngIf="isNewOrTopCategory(game)" src="http://stage.whgstage.com/front-end-test/images/new-ribbon.png"
+                    alt="Ribbon for New & Top games">
+                <img class="poster" [src]="game.image" alt="Game image">
+                <div class="shadow" *ngIf="game.amount"></div>
+                <span class="amount" *ngIf="game.amount">
+                    {{ game.amount | currency:'GBP':'symbol-narrow':'4.2-2' }}
+                </span>
+                <span class="name only-hover">{{ game.name }}</span>
+                <span class="play only-hover">
+                    <i class="icon material-icons">play_arrow</i>
+                </span>
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #noGames>
+        <div class="no-games-message" fxFlex fxLayout="column wrap" fxLayoutAlign="center center">
+            <i class="icon material-icons">sentiment_very_dissatisfied</i>
+            <h3 class="text">Sorry, there is no game at the moment within this category.</h3>
+        </div>
+    </ng-template>
+</div>

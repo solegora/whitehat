@@ -1,0 +1,146 @@
+.game-grid {
+    margin: 0 auto;
+    max-width: var(--dashboard-max-width);
+    .game {
+        border-radius: 10px;
+        padding: 35px 7.5px 0;
+        user-select: none;
+        .game-content {
+            position: relative;
+            transition: var(--normal-transition);
+            margin: 0 auto;
+            &:hover {
+                transform: scale(1.1);
+                .poster {
+                    box-shadow: var(--box-shadow-card-hover);
+                }
+                .only-hover {
+                    line-height: var(--game-name-font-size);
+                    height: var(--game-name-font-size);
+                    &.play {
+                        line-height: var(--play-icon-font-size);
+                        height: var(--play-icon-font-size);
+                    }
+                }
+            }
+            .ribbon {
+                position: absolute;
+                top: 5px;
+                right: 0;
+                width: 17.5%;
+                z-index: 50;
+            }
+            .poster {
+                width: 100%;
+                cursor: pointer;
+                border-radius: 10px;
+                box-shadow: var(--box-shadow-card);
+                transition: var(--normal-transition);
+            }
+            .shadow, .amount, .name, .play {
+                position: absolute;
+                top: 16px;
+                left: 50%;
+                right: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                transition: var(--normal-transition);
+                cursor: pointer;
+            }
+            .shadow {
+                z-index: 10;
+                height: var(--game-name-font-size);
+                border-top-right-radius: var(--border-radius-game);
+                border-top-left-radius: var(--border-radius-game);
+                background-color: var(--shadow-color);
+                opacity: 0.6;
+            }
+            .amount {
+                z-index: 20;
+                line-height: var(--game-name-font-size);
+                font-size: var(--font-pounds);
+                color: var(--white-color);
+                font-weight: bold;
+                text-align: center;
+            }
+            .name {
+                top: initial;
+                bottom: 0;
+                z-index: 20;
+                line-height: var(--game-name-font-size);
+                font-size: var(--font-pounds);
+                color: var(--white-color);
+                font-weight: bold;
+                text-transform: uppercase;
+                text-align: center;
+                text-shadow: 1px 1px 10px var(--shadow-color), 2px 2px 10px var(--shadow-color);
+            }
+            .play {
+                top: 50%;
+                z-index: 20;
+                color: var(--white-color);
+                text-align: center;
+                text-shadow: 1px 1px 10px var(--shadow-color), 2px 2px 10px var(--shadow-color);
+                opacity: 0.8;
+                .icon {
+                    font-size: var(--play-icon-font-size);
+                }
+            }
+            .only-hover {
+                height: 0rem;
+                line-height: 0rem;
+                overflow: hidden;
+            }
+        }
+    }
+    .no-games-message {
+        margin-top: 10%;
+        .icon {
+            font-size: 10rem;
+            opacity: 0.75;
+        }
+        .text {
+            font-size: 1.5rem;
+            opacity: 0.75;
+            padding: 25px;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .game {
+        margin-bottom: 10vh;
+        .game-content {
+            text-align: center;
+            max-width: 400px;
+            .poster, .amount-box, .amount, .shadow {
+                max-width: 400px;
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .game {
+        margin-bottom: 5vh;
+        .game-content {
+            max-width: 320px;
+            .poster, .amount-box, .amount, .shadow {
+                max-width: 320px;
+          }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .game {
+        margin-bottom: 2.5vh;
+        .game-content {
+            max-width: 250px;
+            .poster, .amount-box, .amount, .shadow {
+                max-width: 250px;
+          }
+        }
+    }
+}
